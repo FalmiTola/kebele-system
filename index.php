@@ -63,7 +63,7 @@ $family_count = $family_count ?: 400;
     <!-- Header / Navbar -->
     <nav class="fixed w-full z-50 glass py-4 px-6 md:px-12 flex justify-between items-center">
         <div class="flex items-center gap-5">
-            <div class="flex items-center gap-2 border-r border-white/10 pr-5">
+            <div class="flex items-center gap-4 border-r border-white/10 pr-5">
                 <img src="assets/img/ethiopia_flag.png" alt="Ethiopia" class="w-8 h-5 rounded-sm shadow-md">
                 <img src="assets/img/oromia_flag.png" alt="Oromia" class="w-8 h-5 rounded-sm shadow-md">
             </div>

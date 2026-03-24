@@ -22,7 +22,7 @@ $recentResidents = $pdo->query("SELECT * FROM individuals ORDER BY created_at DE
 <div class="card bg-grad-primary mb-4 border-0 p-5 position-relative overflow-hidden">
     <div class="row align-items-center position-relative z-1">
         <div class="col-md-8">
-            <div class="d-flex align-items-center gap-2 mb-3">
+            <div class="d-flex align-items-center gap-4 mb-3">
                 <img src="assets/img/ethiopia_flag.png" alt="Ethiopia" height="25" class="rounded shadow-sm">
                 <img src="assets/img/oromia_flag.png" alt="Oromia" height="25" class="rounded shadow-sm">
                 <span class="text-white-50 ms-2 small fw-bold uppercase tracking-wider">Official Administration Workspace</span>

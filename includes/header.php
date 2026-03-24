@@ -27,7 +27,7 @@ require_once __DIR__ . '/lang.php';
                         <button class="btn btn-outline-secondary btn-sm" id="menu-toggle">
                             <i class="fas fa-bars"></i>
                         </button>
-                        <div class="d-none d-lg-flex align-items-center gap-2 border-start ps-3 ms-2">
+                        <div class="d-none d-lg-flex align-items-center gap-3 border-start ps-3 ms-2">
                             <img src="/kebele-system/assets/img/ethiopia_flag.png" alt="Ethiopia" height="20" class="rounded-1 shadow-sm">
                             <img src="/kebele-system/assets/img/oromia_flag.png" alt="Oromia" height="20" class="rounded-1 shadow-sm">
                             <div class="ms-2">
