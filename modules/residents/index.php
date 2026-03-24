@@ -67,7 +67,14 @@ $residents = $stmt->fetchAll();
                         <img src="../../assets/images/<?php echo $r['phot']; ?>" class="rounded-circle" width="40" height="40" onerror="this.src='https://ui-avatars.com/api/?name=<?php echo urlencode($r['fname']); ?>&background=random'">
                     </td>
                     <td>#<?php echo $r['id']; ?></td>
-                    <td><?php echo "{$r['fname']} {$r['mname']} {$r['lname']}"; ?></td>
+                    <td>
+                        <div class="fw-bold"><?php echo "{$r['fname']} {$r['mname']} {$r['lname']}"; ?></div>
+                        <?php if ($r['status'] === 'deceased'): ?>
+                            <span class="badge bg-danger-subtle text-danger border border-danger-subtle" style="font-size: 0.65rem;">
+                                <i class="fas fa-dove me-1"></i> DECEASED
+                            </span>
+                        <?php endif; ?>
+                    </td>
                     <td><?php echo "{$r['s']} / {$r['age']}"; ?></td>
                     <td><?php echo $r['occ']; ?></td>
                     <td><?php echo $r['pho_no'] ?? 'N/A'; ?></td>

@@ -62,11 +62,20 @@ $family_count = $family_count ?: 400;
 
     <!-- Header / Navbar -->
     <nav class="fixed w-full z-50 glass py-4 px-6 md:px-12 flex justify-between items-center">
-        <div class="flex items-center gap-3">
-            <div class="w-10 h-10 bg-admin-secondary rounded-lg flex items-center justify-center">
-                <i class="fas fa-landmark text-white text-xl"></i>
+        <div class="flex items-center gap-5">
+            <div class="flex items-center gap-2 border-r border-white/10 pr-5">
+                <img src="assets/img/ethiopia_flag.png" alt="Ethiopia" class="w-8 h-5 rounded-sm shadow-md">
+                <img src="assets/img/oromia_flag.png" alt="Oromia" class="w-8 h-5 rounded-sm shadow-md">
             </div>
-            <span class="font-display font-bold text-xl tracking-tight text-white">HIRMATA <span class="text-admin-secondary">MENTINA</span></span>
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-admin-secondary rounded-lg flex items-center justify-center">
+                    <i class="fas fa-landmark text-white text-xl"></i>
+                </div>
+                <div class="hidden sm:block">
+                    <span class="block font-display font-bold text-xl tracking-tight text-white leading-tight">HIRMATA <span class="text-admin-secondary">MENTINA</span></span>
+                    <span class="text-[10px] text-slate-400 font-bold uppercase tracking-[0.2em]">Administrative Portal</span>
+                </div>
+            </div>
         </div>
         <div class="hidden md:flex gap-8 font-medium">
             <a href="#" class="hover:text-admin-secondary transition-colors"><?php echo __('home'); ?></a>
@@ -257,16 +266,16 @@ $family_count = $family_count ?: 400;
                 <div>
                     <h4 class="text-white font-bold mb-6 uppercase tracking-widest text-xs">Office Hours</h4>
                     <ul class="space-y-4 text-slate-500 text-sm">
-                        <li>Mon - Fri: 8:30 AM - 5:30 PM</li>
-                        <li>Saturday: 8:30 AM - 12:30 PM</li>
+                        <li>Mon - Fri: 2:30 AM - 11:30 PM</li>
+                        <li>Saturday: 3:30 AM - 10:30 PM</li>
                         <li>Sunday: Closed</li>
                     </ul>
                 </div>
                 <div>
                     <h4 class="text-white font-bold mb-6 uppercase tracking-widest text-xs">Contact Us</h4>
                     <p class="text-slate-500 text-sm leading-relaxed">
-                        <i class="fas fa-map-marker-alt text-admin-secondary mr-2"></i> Jimma, Ethiopia<br>
-                        <i class="fas fa-phone text-admin-secondary mr-2 text-xs"></i> +251 47 111 ....<br>
+                        <i class="fas fa-map-marker-alt text-admin-secondary mr-2"></i> Jimma, Oromia<br>
+                        <i class="fas fa-phone text-admin-secondary mr-2 text-xs"></i> +251 9111111<br>
                         <i class="fas fa-envelope text-admin-secondary mr-2 text-xs"></i> info@hirmata.gov.et
                     </p>
                 </div>

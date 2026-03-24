@@ -41,7 +41,12 @@ $translations = [
         'manager' => 'Manager',
         'secretary' => 'Secretary',
         'security_committee' => 'Security Committee',
-        'data_clerk' => 'Data Clerk'
+        'data_clerk' => 'Data Clerk',
+        'vital_records' => 'Vital Records',
+        'birth_cert' => 'Birth Certificate',
+        'death_cert' => 'Death Certificate',
+        'mark_deceased' => 'Report Death',
+        'is_deceased' => 'Status: Deceased'
     ],
     'om' => [ // Afaan Oromoo
         'welcome' => 'Baga nagaan dhuftan',
@@ -70,7 +75,12 @@ $translations = [
         'manager' => 'Maanajara',
         'secretary' => 'Barreessaa',
         'security_committee' => 'Koree Nageenyaa',
-        'data_clerk' => 'Barreessaa Deetaa'
+        'data_clerk' => 'Barreessaa Deetaa',
+        'vital_records' => 'Galmee Jireenyaa',
+        'birth_cert' => 'Waraqaa Dhalootaa',
+        'death_cert' => 'Waraqaa Du’aa',
+        'mark_deceased' => 'Du’a Galmeessu',
+        'is_deceased' => 'Haala: Kan Boqotan'
     ],
     'am' => [ // Amharic
         'welcome' => 'እንኳን ደህና መጡ',
@@ -99,7 +109,12 @@ $translations = [
         'manager' => 'ስራ አስኪያጅ',
         'secretary' => 'ፀሃፊ',
         'security_committee' => 'የደህንነት ኮሚቴ',
-        'data_clerk' => 'የመረጃ ጸሐፊ'
+        'data_clerk' => 'የመረጃ ጸሐፊ',
+        'vital_records' => 'የወሳኝ ኩነቶች መዝገብ',
+        'birth_cert' => 'የልደት ምስክር ወረቀት',
+        'death_cert' => 'የሞት ምስክር ወረቀት',
+        'mark_deceased' => 'ሞትን መመዝገብ',
+        'is_deceased' => 'ሁኔታ፡ የሞቱ'
     ]
 ];
 

@@ -17,8 +17,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
 
         // 1. Insert into individuals
-        $stmt = $pdo->prepare("INSERT INTO individuals (fname, lname, mname, mar, s, nat, level_edu, relg, occ, phot) 
-                               VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+        $stmt = $pdo->prepare("INSERT INTO individuals (fname, lname, mname, mar, s, nat, level_edu, relg, occ, phot, mother_full_name, father_full_name, mother_nat, father_nat) 
+                               VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
         
         $fname = $_POST['fname'];
         $lname = $_POST['lname'];
@@ -29,6 +29,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $level_edu = $_POST['level_edu'];
         $relg = $_POST['relg'];
         $occ = $_POST['occ'];
+        $mother_full_name = $_POST['mother_full_name'] ?? '';
+        $father_full_name = $_POST['father_full_name'] ?? '';
+        $mother_nat = $_POST['mother_nat'] ?? 'Itoophiyaa';
+        $father_nat = $_POST['father_nat'] ?? 'Itoophiyaa';
         
         $phot = 'default.png';
         if (isset($_FILES['photo']) && $_FILES['photo']['error'] === 0) {
@@ -40,7 +44,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             move_uploaded_file($_FILES['photo']['tmp_name'], "../../assets/images/" . $phot);
         }
 
-        $stmt->execute([$fname, $lname, $mname, $mar, $s, $nat, $level_edu, $relg, $occ, $phot]);
+        $stmt->execute([$fname, $lname, $mname, $mar, $s, $nat, $level_edu, $relg, $occ, $phot, $mother_full_name, $father_full_name, $mother_nat, $father_nat]);
         $resident_id = $pdo->lastInsertId();
 
         // 2. Insert into ages
@@ -137,6 +141,24 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <div class="col-md-4">
             <label class="form-label">Occupation</label>
             <input type="text" name="occ" class="form-control" required>
+        </div>
+
+        <h5 class="border-bottom pb-2 mt-4 text-primary"><i class="fas fa-users me-2"></i>Parental Information (For Birth Certificates)</h5>
+        <div class="col-md-6">
+            <label class="form-label">Mother's Full Name</label>
+            <input type="text" name="mother_full_name" class="form-control">
+        </div>
+        <div class="col-md-6">
+            <label class="form-label">Father's Full Name (If different from names above)</label>
+            <input type="text" name="father_full_name" class="form-control">
+        </div>
+        <div class="col-md-6">
+            <label class="form-label">Mother's Nationality</label>
+            <input type="text" name="mother_nat" class="form-control" value="Itoophiyaa">
+        </div>
+        <div class="col-md-6">
+            <label class="form-label">Father's Nationality</label>
+            <input type="text" name="father_nat" class="form-control" value="Itoophiyaa">
         </div>
 
         <h5 class="border-bottom pb-2 mt-4 text-primary"><i class="fas fa-map-marker-alt me-2"></i>Contact & Address</h5>

@@ -35,7 +35,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $pdo->beginTransaction();
         }
 
-        $stmtUpdate = $pdo->prepare("UPDATE individuals SET fname=?, lname=?, mname=?, mar=?, s=?, nat=?, level_edu=?, relg=?, occ=? WHERE id=?");
+        $stmtUpdate = $pdo->prepare("UPDATE individuals SET fname=?, lname=?, mname=?, mar=?, s=?, nat=?, level_edu=?, relg=?, occ=?, mother_full_name=?, father_full_name=?, mother_nat=?, father_nat=? WHERE id=?");
         $stmtUpdate->execute([
             $_POST['fname'], 
             $_POST['lname'], 
@@ -46,6 +46,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $_POST['level_edu'] ?? $r['level_edu'], 
             $_POST['relg'] ?? $r['relg'], 
             $_POST['occ'], 
+            $_POST['mother_full_name'],
+            $_POST['father_full_name'],
+            $_POST['mother_nat'],
+            $_POST['father_nat'],
             $id
         ]);
 
@@ -141,6 +145,24 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <div class="col-md-3">
             <label class="form-label">Education Level</label>
             <input type="text" name="level_edu" class="form-control" value="<?php echo $r['level_edu']; ?>" required>
+        </div>
+
+        <h5 class="border-bottom pb-2 mt-4 text-primary"><i class="fas fa-users me-2"></i>Parental Information (For Birth Certificates)</h5>
+        <div class="col-md-6">
+            <label class="form-label">Mother's Full Name</label>
+            <input type="text" name="mother_full_name" class="form-control" value="<?php echo $r['mother_full_name']; ?>">
+        </div>
+        <div class="col-md-6">
+            <label class="form-label">Father's Full Name</label>
+            <input type="text" name="father_full_name" class="form-control" value="<?php echo $r['father_full_name']; ?>">
+        </div>
+        <div class="col-md-6">
+            <label class="form-label">Mother's Nationality</label>
+            <input type="text" name="mother_nat" class="form-control" value="<?php echo $r['mother_nat'] ?? 'Itoophiyaa'; ?>">
+        </div>
+        <div class="col-md-6">
+            <label class="form-label">Father's Nationality</label>
+            <input type="text" name="father_nat" class="form-control" value="<?php echo $r['father_nat'] ?? 'Itoophiyaa'; ?>">
         </div>
         <div class="col-md-6">
             <label class="form-label">Update Photo</label>

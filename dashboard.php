@@ -22,6 +22,11 @@ $recentResidents = $pdo->query("SELECT * FROM individuals ORDER BY created_at DE
 <div class="card bg-grad-primary mb-4 border-0 p-5 position-relative overflow-hidden">
     <div class="row align-items-center position-relative z-1">
         <div class="col-md-8">
+            <div class="d-flex align-items-center gap-2 mb-3">
+                <img src="assets/img/ethiopia_flag.png" alt="Ethiopia" height="25" class="rounded shadow-sm">
+                <img src="assets/img/oromia_flag.png" alt="Oromia" height="25" class="rounded shadow-sm">
+                <span class="text-white-50 ms-2 small fw-bold uppercase tracking-wider">Official Administration Workspace</span>
+            </div>
             <h1 class="display-5 fw-bold text-white mb-2">
                 <?php echo __('welcome'); ?>, <?php echo $_SESSION['username'] ?? 'Staff'; ?>!
             </h1>
@@ -30,7 +35,7 @@ $recentResidents = $pdo->query("SELECT * FROM individuals ORDER BY created_at DE
             </p>
         </div>
         <div class="col-md-4 text-center d-none d-md-block">
-            <i class="fas fa-landmark text-white-50 shadow-sm" style="font-size: 8rem; opacity: 0.15;"></i>
+            <i class="fas fa-landmark text-white shadow-sm" style="font-size: 8rem; opacity: 0.1;"></i>
         </div>
     </div>
 </div>

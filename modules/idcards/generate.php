@@ -17,10 +17,25 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $resident_id = $_POST['resident_id'];
     $issue_date = date('Y-m-d');
     
-    // Generate a unique ID number format: HM-YYYY-XXXX
     $year = date('Y');
-    $random = str_pad(mt_rand(1, 9999), 4, '0', STR_PAD_LEFT);
-    $id_number = "HM-$year-$random";
+    
+    // Get the last sequential number for the current year
+    $lastIdStmt = $pdo->prepare("SELECT id_number FROM id_cards WHERE id_number LIKE ? ORDER BY id DESC LIMIT 1");
+    $lastIdStmt->execute(["HM/$year/%"]);
+    $lastId = $lastIdStmt->fetchColumn();
+    
+    if ($lastId) {
+        // Extract the last 4 digits and increment
+        $parts = explode('/', $lastId);
+        $lastNumber = intval(end($parts));
+        $nextNumber = $lastNumber + 1;
+    } else {
+        // First ID of the year
+        $nextNumber = 1;
+    }
+    
+    $sequence = str_pad($nextNumber, 4, '0', STR_PAD_LEFT);
+    $id_number = "HM/$year/$sequence";
 
     $stmt = $pdo->prepare("INSERT INTO id_cards (resident_id, id_number, issue_date) VALUES (?, ?, ?)");
     try {
@@ -69,7 +84,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <div class="col-md-6">
         <div class="alert alert-info">
             <h5><i class="fas fa-info-circle me-2"></i>ID Card Logic</h5>
-            <p>ID cards are generated automatically with a unique identification number following the <code>HM-YYYY-XXXX</code> pattern.</p>
+            <p>ID cards are generated <strong>sequentially</strong> with a unique identification number following the <code>HM/YYYY/XXXX</code> pattern (e.g., HM/2026/0001).</p>
             <p>Once generated, you can format and print the ID card with the resident's photo and personal details.</p>
         </div>
     </div>

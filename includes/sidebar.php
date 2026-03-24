@@ -38,6 +38,10 @@
             <i class="fas fa-id-card-clip me-2"></i><?php echo __('id_cards'); ?>
         </a>
 
+        <a href="/kebele-system/modules/vital/index.php" class="list-group-item list-group-item-action <?php echo strpos($_SERVER['PHP_SELF'], 'modules/vital') !== false ? 'active' : ''; ?>">
+            <i class="fas fa-file-signature me-2"></i><?php echo __('vital_records'); ?>
+        </a>
+
         <?php if (isset($_SESSION['role']) && $_SESSION['role'] === 'admin'): ?>
         <p class="text-muted small text-uppercase fw-bold mt-4 mb-2 ps-2" style="font-size: 0.65rem; letter-spacing: 1px;">Administrative</p>
         

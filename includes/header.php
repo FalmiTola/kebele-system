@@ -23,10 +23,19 @@ require_once __DIR__ . '/lang.php';
         <div id="page-content-wrapper">
             <!-- Navbar -->
             <nav class="navbar navbar-expand-lg sticky-top border-bottom">
-                <div class="container-fluid">
-                    <button class="btn btn-outline-secondary btn-sm" id="menu-toggle">
-                        <i class="fas fa-bars"></i>
-                    </button>
+                    <div class="d-flex align-items-center gap-3">
+                        <button class="btn btn-outline-secondary btn-sm" id="menu-toggle">
+                            <i class="fas fa-bars"></i>
+                        </button>
+                        <div class="d-none d-lg-flex align-items-center gap-2 border-start ps-3 ms-2">
+                            <img src="/kebele-system/assets/img/ethiopia_flag.png" alt="Ethiopia" height="20" class="rounded-1 shadow-sm">
+                            <img src="/kebele-system/assets/img/oromia_flag.png" alt="Oromia" height="20" class="rounded-1 shadow-sm">
+                            <div class="ms-2">
+                                <h6 class="mb-0 fw-bold text-dark small" style="letter-spacing: 0.5px;">HIRMAT MENTINA KEBELE</h6>
+                                <p class="text-muted mb-0" style="font-size: 0.65rem;">Official Administrative Portal</p>
+                            </div>
+                        </div>
+                    </div>
                     <div class="ms-auto d-flex align-items-center">
                         <!-- Language Switcher -->
                         <div class="dropdown me-4">
