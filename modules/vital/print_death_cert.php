@@ -130,6 +130,10 @@
         <div class="border-outer">
             <div class="header-content">
                 <div class="header-text">
+                    <div class="d-flex justify-content-between align-items-center mb-3 px-5">
+                        <img src="../../assets/img/ethiopia_flag.png" style="width: 80px; height: 50px; border: 1px solid #ddd;">
+                        <img src="../../assets/img/oromia_flag.png" style="width: 80px; height: 50px; border: 1px solid #ddd;">
+                    </div>
                     <h6>FEDERAL DEMOCRATIC REPUBLIC OF ETHIOPIA</h6>
                     <h6>HIRMAT MENTINA KEBELE ADMINISTRATION | VITAL RECORDS DEPARTMENT</h6>
                     <h4>Death Certificate / የሞት ምስክር ወረቀት</h4>

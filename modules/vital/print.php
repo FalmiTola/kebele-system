@@ -218,7 +218,7 @@ function getOromoMonth($date) {
                 <img src="../../assets/images/<?php echo $c['phot']; ?>" class="resident-photo" onerror="this.src='https://ui-avatars.com/api/?name=<?php echo urlencode($c['fname']); ?>&size=128'">
                 
                 <div class="header-text">
-                    <div class="d-flex justify-content-center gap-6 mb-3">
+                    <div class="d-flex justify-content-between align-items-center mb-3 px-5">
                         <img src="../../assets/img/ethiopia_flag.png" class="flag">
                         <img src="../../assets/img/oromia_flag.png" class="flag">
                     </div>
