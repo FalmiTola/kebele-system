@@ -74,37 +74,39 @@ if (!$card) {
 
         /* ══ Top Header Band ══ */
         .card-header {
-            background: linear-gradient(135deg, #1b5e20 0%, #2e7d32 60%, #388e3c 100%);
+            background: linear-gradient(135deg, #0d1b2a 0%, #1a2a4a 50%, #0f2040 100%);
             padding: 0;
             position: relative;
             display: flex;
             align-items: center;
-            justify-content: space-between;
-            min-height: 78px;
+            justify-content: center;
+            min-height: 82px;
+            border-bottom: 3px solid #2563eb;
         }
 
-        /* Flag/emblem side panels */
+        /* Flag panels — absolute corners */
         .header-flag-panel {
-            width: 80px;
-            flex-shrink: 0;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
             display: flex;
             align-items: center;
-            justify-content: center;
-            padding: 8px;
+            padding: 0 12px;
         }
+        .header-flag-panel.left  { left: 0; }
+        .header-flag-panel.right { right: 0; }
         .header-flag-panel img {
-            height: 52px;
+            height: 50px;
             border-radius: 3px;
-            border: 1px solid rgba(255,255,255,0.4);
-            box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+            border: 2px solid rgba(255,255,255,0.35);
+            box-shadow: 0 3px 12px rgba(0,0,0,0.5);
         }
 
         /* Center title */
         .header-center {
-            flex: 1;
             text-align: center;
-            padding: 10px 6px;
-            line-height: 1.35;
+            padding: 12px 100px;
+            line-height: 1.4;
         }
         .header-center .line-om {
             color: #ffffff;
@@ -114,30 +116,31 @@ if (!$card) {
             letter-spacing: 0.5px;
         }
         .header-center .line-title-om {
-            color: #a5d6a7;
+            color: #93c5fd;
             font-size: 11px;
             font-weight: 600;
         }
         .header-center .line-am {
-            color: #e8f5e9;
+            color: #bfdbfe;
             font-size: 12px;
             font-weight: 700;
             margin-top: 2px;
         }
         .header-center .line-sub {
-            color: #c8e6c9;
+            color: #7dd3fc;
             font-size: 9px;
             font-weight: 500;
             margin-top: 3px;
         }
         .header-center .card-title-bar {
-            background: rgba(0,0,0,0.25);
+            background: rgba(37,99,235,0.4);
+            border: 1px solid rgba(147,197,253,0.4);
             margin-top: 6px;
             padding: 3px 16px;
-            border-radius: 3px;
+            border-radius: 20px;
             display: inline-block;
-            color: #ffffff;
-            font-size: 10px;
+            color: #e0f2fe;
+            font-size: 9.5px;
             font-weight: 700;
             letter-spacing: 0.8px;
             text-transform: uppercase;
@@ -271,19 +274,22 @@ if (!$card) {
 
         <!-- ══ Header: Oromia flag LEFT · Title CENTER · Ethiopia flag RIGHT ══ -->
         <div class="card-header">
-            <div class="header-flag-panel">
+            <!-- Oromia flag — far left corner -->
+            <div class="header-flag-panel left">
                 <img src="../../assets/img/oromia_flag.png" alt="Oromia">
             </div>
 
+            <!-- Centered Title -->
             <div class="header-center">
                 <div class="line-om">Bulchiinsa Mootummaa</div>
                 <div class="line-om" style="font-size:17px;">Naannoo <em>Oromiyaa</em></div>
                 <div class="line-am">የኦሮሚያ ብሔራዊ መንግሥት</div>
-                <div class="line-sub">የአካባቢ ምዝገባ ምስክር ወረቀት &nbsp;|&nbsp; Waraqaa Eenyummaa Jiraattota</div>
+                <div class="line-sub">Waraqaa Eenyummaa Jiraattota &nbsp;|&nbsp; የነዋሪ መታወቂያ ምስክር ወረቀት</div>
                 <span class="card-title-bar">Waraqaa Eenyummaa / መታወቂያ</span>
             </div>
 
-            <div class="header-flag-panel">
+            <!-- Ethiopia flag — far right corner -->
+            <div class="header-flag-panel right">
                 <img src="../../assets/img/ethiopia_flag.png" alt="Itoophiyaa">
             </div>
         </div>
