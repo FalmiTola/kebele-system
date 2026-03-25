@@ -45,7 +45,8 @@ h1, h2, h3, h4, .sidebar-heading {
 
 /* --- Improved Sidebar --- */
 #sidebar-wrapper {
-    min-height: 100vh;
+    height: calc(100vh - 65px);
+    overflow-y: auto;
     width: var(--sidebar-width);
     background: var(--dark);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);

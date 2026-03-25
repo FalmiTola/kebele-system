@@ -18,56 +18,66 @@ require_once __DIR__ . '/lang.php';
     <link rel="stylesheet" href="/kebele-system/assets/css/style.css">
 </head>
 <body class="bg-light">
-    <div class="d-flex" id="wrapper">
-<?php include_once 'sidebar.php'; ?>
-        <div id="page-content-wrapper">
-            <!-- Navbar -->
-            <nav class="navbar navbar-expand-lg sticky-top border-bottom">
-                    <div class="d-flex align-items-center gap-3">
-                        <button class="btn btn-outline-secondary btn-sm" id="menu-toggle">
-                            <i class="fas fa-bars"></i>
-                        </button>
-                        <div class="d-none d-lg-flex align-items-center gap-3 border-start ps-3 ms-2">
-                            <i class="fas fa-landmark text-primary-dark opacity-50"></i>
-                            <div class="ms-2">
-                                <h6 class="mb-0 fw-bold text-dark small" style="letter-spacing: 0.5px;">HIRMAT MENTINA KEBELE</h6>
-                                <p class="text-muted mb-0" style="font-size: 0.65rem;">Official Administrative Portal</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="ms-auto d-flex align-items-center">
-                        <!-- Language Switcher -->
-                        <div class="dropdown me-4">
-                            <button class="btn btn-sm btn-outline-primary dropdown-toggle" type="button" data-bs-toggle="dropdown">
-                                <i class="fas fa-globe me-1"></i> <?php echo strtoupper($current_lang); ?>
-                            </button>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="?lang=en">English</a></li>
-                                <li><a class="dropdown-item" href="?lang=om">Afaan Oromoo</a></li>
-                                <li><a class="dropdown-item" href="?lang=am">አማርኛ</a></li>
-                            </ul>
-                        </div>
-
-                        <?php 
-                            $role_key = $_SESSION['role'] ?? 'staff';
-                            if ($role_key === 'admin') $role_key = 'administrator';
-                            if ($role_key === 'security') $role_key = 'security_committee';
-                            if ($role_key === 'clerk') $role_key = 'data_clerk';
-                        ?>
-                        <span class="me-3 d-none d-md-inline">
-                            <?php echo __('welcome'); ?>, 
-                            <strong><?php echo $_SESSION['username'] ?? 'User'; ?></strong> 
-                            <span class="small text-muted">(<?php echo __($role_key); ?>)</span>
-                        </span>
-                        <div class="dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown">
-                                <i class="fas fa-user-circle fa-lg"></i>
-                            </a>
-                            <ul class="dropdown-menu dropdown-menu-end">
-                                <li><a class="dropdown-item" href="/kebele-system/auth/logout.php"><i class="fas fa-sign-out-alt me-2"></i><?php echo __('logout'); ?></a></li>
-                            </ul>
+    <!-- Navbar - Full Width Top Bar -->
+    <nav class="navbar navbar-expand-lg sticky-top border-bottom bg-white shadow-sm flex-md-nowrap p-0">
+        <div class="container-fluid px-4">
+            <div class="d-flex align-items-center gap-3 py-2">
+                <div class="d-flex align-items-center gap-3">
+                    <button class="btn btn-outline-secondary btn-sm" id="menu-toggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <div class="d-flex align-items-center gap-3 ps-3 ms-2 border-start">
+                        <i class="fas fa-landmark text-primary-dark fs-4"></i>
+                        <div>
+                            <h5 class="mb-0 fw-bold text-dark" style="letter-spacing: 0.5px; font-size: 1.1rem;">HIRMAT MENTINA KEBELE</h5>
+                            <p class="text-muted mb-0 fw-semibold uppercase tracking-wider" style="font-size: 0.65rem;">Official Administrative Portal</p>
                         </div>
                     </div>
                 </div>
-            </nav>
+            </div>
+            
+            <div class="ms-auto d-flex align-items-center gap-4">
+                <!-- Language Switcher -->
+                <div class="dropdown">
+                    <button class="btn btn-sm btn-outline-primary dropdown-toggle border-0 font-bold" type="button" data-bs-toggle="dropdown">
+                        <i class="fas fa-globe me-1"></i> <?php echo strtoupper($current_lang); ?>
+                    </button>
+                    <ul class="dropdown-menu shadow-lg border-0">
+                        <li><a class="dropdown-item" href="?lang=en">English</a></li>
+                        <li><a class="dropdown-item" href="?lang=om">Afaan Oromoo</a></li>
+                        <li><a class="dropdown-item" href="?lang=am">አማርኛ</a></li>
+                    </ul>
+                </div>
+
+                <div class="d-flex align-items-center gap-3 border-start ps-4 py-2">
+                    <div class="text-end d-none d-md-block">
+                        <p class="mb-0 small text-muted leading-tight">Welcome,</p>
+                        <p class="mb-0 fw-bold text-dark leading-tight"><?php echo $_SESSION['username'] ?? 'User'; ?></p>
+                    </div>
+                    <?php 
+                        $role_key = $_SESSION['role'] ?? 'staff';
+                        if ($role_key === 'admin') $role_key = 'administrator';
+                    ?>
+                    <div class="dropdown">
+                        <a class="nav-link p-0" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown">
+                            <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
+                                <i class="fas fa-user-shield"></i>
+                            </div>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end shadow-lg border-0 mt-3 p-2" style="border-radius: 12px;">
+                            <li><h6 class="dropdown-header small text-muted uppercase tracking-wider"><?php echo __($role_key); ?></h6></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item rounded-3" href="/kebele-system/auth/logout.php">
+                                <i class="fas fa-sign-out-alt me-2 text-danger"></i><?php echo __('logout'); ?>
+                            </a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="d-flex" id="wrapper">
+<?php include_once 'sidebar.php'; ?>
+        <div id="page-content-wrapper">
             <div class="container-fluid p-4">
