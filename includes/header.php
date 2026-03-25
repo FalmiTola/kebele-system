@@ -1,5 +1,6 @@
 <?php
 // includes/header.php
+ob_start(); // Buffer output so header() redirects work in any including file
 require_once __DIR__ . '/lang.php';
 ?>
 <!DOCTYPE html>

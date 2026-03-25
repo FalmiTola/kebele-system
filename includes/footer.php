@@ -11,3 +11,6 @@
     <script src="/kebele-system/assets/js/main.js"></script>
 </body>
 </html>
+<?php 
+ob_end_flush(); 
+?>
