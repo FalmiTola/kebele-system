@@ -8,7 +8,7 @@ if (!isset($_SESSION['user_id'])) {
 }
 
 $id = $_GET['id'] ?? 0;
-$stmt = $pdo->prepare("SELECT ic.*, i.*, ag.age, ag.bdate, ad.keb, ad.city, ad.zon, ad.region, ad.wereda, ad.hno
+$stmt = $pdo->prepare("SELECT ic.*, i.*, ag.age, ag.bdate, ad.keb, ad.city, ad.zon, ad.region
                        FROM id_cards ic
                        JOIN individuals i ON ic.resident_id = i.id
                        LEFT JOIN ages ag ON i.id = ag.id
@@ -356,7 +356,7 @@ if (!$card) {
                             <span class="lbl-om">Lakk. M.</span>
                             <span class="lbl-am">የቤት ቁጥር</span>
                         </div>
-                        <div class="field-value"><?php echo $card['hno'] ?? '—'; ?></div>
+                        <div class="field-value"><?php echo $card['zon'] ?? '—'; ?></div>
                     </div>
                 </div>
 
