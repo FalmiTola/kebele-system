@@ -151,31 +151,35 @@ if (!$card) {
 
         /* Photo column */
         .photo-col {
-            width: 110px;
+            width: 120px;
             flex-shrink: 0;
-            background: #f5f5f5;
-            border-right: 2px solid #c8e6c9;
+            background: #f0f4f8;
+            border-right: 2px solid #0d1b2a;
             display: flex;
             flex-direction: column;
-            align-items: center;
+            align-items: flex-start;
             justify-content: flex-start;
             padding: 14px 10px 10px;
-            gap: 8px;
+            gap: 6px;
         }
         .photo-col img {
-            width: 85px;
-            height: 105px;
+            width: 90px;
+            height: 110px;
             object-fit: cover;
-            border-radius: 4px;
-            border: 2px solid #2e7d32;
+            border-radius: 3px;
+            border: 3px solid #0d1b2a;
+            display: block;
         }
         .photo-label {
-            font-size: 8px;
-            color: #777;
-            text-align: center;
-            font-weight: 600;
+            font-size: 7.5px;
+            color: #0d1b2a;
+            text-align: left;
+            font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 0.05em;
+            letter-spacing: 0.08em;
+            border-top: 1.5px solid #0d1b2a;
+            padding-top: 4px;
+            width: 90px;
         }
 
         /* Info column */
