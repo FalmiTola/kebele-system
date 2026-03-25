@@ -109,7 +109,7 @@ $recentResidents = $pdo->query("SELECT * FROM individuals ORDER BY created_at DE
 
     <div class="row g-4">
         <!-- Main Content Area -->
-        <div class="col-lg-8">
+        <div class="col-xl-8 col-lg-12">
             <div class="card border-0 shadow-sm p-4 h-100" style="border-radius: 28px;">
                 <div class="d-flex justify-content-between align-items-center mb-4">
                     <h5 class="fw-bold mb-0">
@@ -121,9 +121,9 @@ $recentResidents = $pdo->query("SELECT * FROM individuals ORDER BY created_at DE
                     <table class="table table-hover align-middle mb-0">
                         <thead>
                             <tr class="text-muted small text-uppercase">
-                                <th class="border-0 pb-3">Resident</th>
+                                <th class="border-0 pb-3" style="min-width: 150px;">Resident</th>
                                 <th class="border-0 pb-3">Status</th>
-                                <th class="border-0 pb-3">Registration Date</th>
+                                <th class="border-0 pb-3">Reg. Date</th>
                                 <th class="border-0 pb-3 text-end">Action</th>
                             </tr>
                         </thead>
@@ -135,20 +135,20 @@ $recentResidents = $pdo->query("SELECT * FROM individuals ORDER BY created_at DE
                                     <tr class="border-transparent">
                                         <td>
                                             <div class="d-flex align-items-center">
-                                                <div class="bg-light rounded-circle p-2 me-3" style="width: 40px; height: 40px; display: flex; align-items: center; justify-content: center;">
-                                                    <i class="fas fa-user text-primary-dark"></i>
+                                                <div class="bg-light rounded-circle p-2 me-3 d-none d-sm-flex" style="width: 36px; height: 36px; align-items: center; justify-content: center;">
+                                                    <i class="fas fa-user text-primary-dark small"></i>
                                                 </div>
-                                                <span class="fw-bold"><?php echo "{$resident['fname']} {$resident['lname']}"; ?></span>
+                                                <span class="fw-bold small"><?php echo "{$resident['fname']} {$resident['lname']}"; ?></span>
                                             </div>
                                         </td>
                                         <td>
-                                            <span class="badge rounded-pill bg-success-subtle text-success px-3">Active</span>
+                                            <span class="badge rounded-pill bg-success-subtle text-success px-2 py-1 small">Active</span>
                                         </td>
                                         <td class="text-muted small">
                                             <?php echo date('M d, Y', strtotime($resident['created_at'])); ?>
                                         </td>
                                         <td class="text-end">
-                                            <a href="modules/residents/view.php?id=<?php echo $resident['id']; ?>" class="btn btn-sm btn-light border rounded-pill px-3">Details</a>
+                                            <a href="modules/residents/view.php?id=<?php echo $resident['id']; ?>" class="btn btn-sm btn-light border rounded-pill px-2 py-1 small">Details</a>
                                         </td>
                                     </tr>
                                 <?php endforeach; ?>
@@ -160,32 +160,36 @@ $recentResidents = $pdo->query("SELECT * FROM individuals ORDER BY created_at DE
         </div>
 
         <!-- Sidebar Actions -->
-        <div class="col-lg-4">
+        <div class="col-xl-4 col-lg-12">
             <div class="card border-0 shadow-sm p-4 mb-4 glass-card" style="border-radius: 28px;">
                 <h6 class="fw-bold mb-4 text-dark"><i class="fas fa-bolt-lightning me-2 text-warning"></i> Official Operations</h6>
-                <div class="d-grid gap-3">
-                    <a href="modules/idcards/index.php" class="btn btn-white text-start p-3 border shadow-sm hover-lift" style="border-radius: 20px;">
-                        <div class="d-flex align-items-center">
-                            <div class="bg-grad-primary text-white rounded-4 p-2 me-3" style="width: 48px; height: 48px; display: flex; align-items: center; justify-content: center;">
-                                <i class="fas fa-certificate fs-5"></i>
+                <div class="row g-3">
+                    <div class="col-md-6 col-xl-12">
+                        <a href="modules/idcards/index.php" class="btn btn-white text-start p-3 border shadow-sm hover-lift w-100" style="border-radius: 20px;">
+                            <div class="d-flex align-items-center">
+                                <div class="bg-grad-primary text-white rounded-4 p-2 me-3" style="width: 42px; height: 42px; display: flex; align-items: center; justify-content: center;">
+                                    <i class="fas fa-certificate fs-6"></i>
+                                </div>
+                                <div>
+                                    <h6 class="mb-0 fw-bold small">Issuance Control</h6>
+                                    <p class="mb-0 text-muted" style="font-size: 0.7rem;">Process certificates</p>
+                                </div>
                             </div>
-                            <div>
-                                <h6 class="mb-0 fw-bold">Issuance Control</h6>
-                                <p class="mb-0 text-muted small">Process certificates</p>
+                        </a>
+                    </div>
+                    <div class="col-md-6 col-xl-12">
+                        <a href="modules/residents/create.php" class="btn btn-white text-start p-3 border shadow-sm hover-lift w-100" style="border-radius: 20px;">
+                            <div class="d-flex align-items-center">
+                                <div class="bg-grad-accent text-white rounded-4 p-2 me-3" style="width: 42px; height: 42px; display: flex; align-items: center; justify-content: center;">
+                                    <i class="fas fa-user-plus fs-6"></i>
+                                </div>
+                                <div>
+                                    <h6 class="mb-0 fw-bold text-dark small">Citizen Entry</h6>
+                                    <p class="mb-0 text-muted" style="font-size: 0.7rem;">Register new records</p>
+                                </div>
                             </div>
-                        </div>
-                    </a>
-                    <a href="modules/residents/create.php" class="btn btn-white text-start p-3 border shadow-sm hover-lift" style="border-radius: 20px;">
-                        <div class="d-flex align-items-center">
-                            <div class="bg-grad-accent text-white rounded-4 p-2 me-3" style="width: 48px; height: 48px; display: flex; align-items: center; justify-content: center;">
-                                <i class="fas fa-user-plus fs-5"></i>
-                            </div>
-                            <div>
-                                <h6 class="mb-0 fw-bold text-dark">Citizen Entry</h6>
-                                <p class="mb-0 text-muted small">Register new records</p>
-                            </div>
-                        </div>
-                    </a>
+                        </a>
+                    </div>
                 </div>
             </div>
 
@@ -197,7 +201,7 @@ $recentResidents = $pdo->query("SELECT * FROM individuals ORDER BY created_at DE
                         <div class="flex-grow-1 bg-white bg-opacity-10 rounded-pill" style="height: 6px;">
                             <div class="bg-info rounded-pill" style="width: 85%; height: 100%;"></div>
                         </div>
-                        <span class="small text-white-50">85% Sync</span>
+                        <span class="small text-white-50">85%</span>
                     </div>
                     <div class="d-flex justify-content-between small text-white-50 mb-0">
                         <span>Database Status:</span>
