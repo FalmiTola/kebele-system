@@ -27,7 +27,10 @@ require_once __DIR__ . '/lang.php';
                         <i class="fas fa-bars"></i>
                     </button>
                     <div class="d-flex align-items-center gap-3 ps-3 ms-2 border-start">
-                        <i class="fas fa-landmark text-primary-dark fs-4"></i>
+                        <div class="d-flex align-items-center gap-2 me-2">
+                            <img src="/kebele-system/assets/img/ethiopia_flag.png" alt="Ethiopia" height="22" class="rounded-1 shadow-sm border border-black-50 opacity-90">
+                            <img src="/kebele-system/assets/img/oromia_flag.png" alt="Oromia" height="22" class="rounded-1 shadow-sm border border-black-50 opacity-90">
+                        </div>
                         <div>
                             <h5 class="mb-0 fw-bold text-dark" style="letter-spacing: 0.5px; font-size: 1.1rem;">HIRMAT MENTINA KEBELE</h5>
                             <p class="text-muted mb-0 fw-semibold uppercase tracking-wider" style="font-size: 0.65rem;">Official Administrative Portal</p>
